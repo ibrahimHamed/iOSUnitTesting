@@ -17,12 +17,12 @@ final class SignUpFormModelValidatorTest: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
     
     func testSignUpFormModelValidator_withValidFirstName_ShouldReturnTrue(){
         // Arrange
-        let sut = SignUpFormModelValidator()
+//        let sut = SignUpFormModelValidator()
         // Act
         let isFirstNameValid = sut.isFirstNameValid(firstName: "Ibrahim")
         // Assert
@@ -34,6 +34,14 @@ final class SignUpFormModelValidatorTest: XCTestCase {
         let isFirstNameValid = sut.isFirstNameValid(firstName: "i")
         
         // Assert
-        XCTAssertFalse(isFirstNameValid, "isFirstNameValid() should have return false for a first name that is shorten than 2 characters but it has return true")
+        XCTAssertFalse(isFirstNameValid, "isFirstNameValid() should have return false for a first name that is shorten than \(SignUpConstants.firstNameMinLength) characters but it has return true")
+    }
+    
+    func testSignUpFormModelValidator_withTooLongFirstName_ShouldReturnFalse(){
+        // Act
+        let isFirstNameValid = sut.isFirstNameValid(firstName: "IbrahimMohamedHamed")
+        
+        // Assert
+        XCTAssertFalse(isFirstNameValid, "isFirstNameValid() should have return false for a first name that is longer than \(SignUpConstants.firstNameMaxLength) characters but it has return true")
     }
 }

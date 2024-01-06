@@ -17,6 +17,7 @@
 		527553312B46DDC10005B331 /* PhotoApp_UnitTestingDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527553302B46DDC10005B331 /* PhotoApp_UnitTestingDemoUITestsLaunchTests.swift */; };
 		5275533E2B473DB30005B331 /* SignUpFormModelValidatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5275533D2B473DB30005B331 /* SignUpFormModelValidatorTest.swift */; };
 		527553402B473E590005B331 /* SignUpFormModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5275533F2B473E590005B331 /* SignUpFormModelValidator.swift */; };
+		527553422B475FA40005B331 /* SignUpConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527553412B475FA40005B331 /* SignUpConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		527553302B46DDC10005B331 /* PhotoApp_UnitTestingDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApp_UnitTestingDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5275533D2B473DB30005B331 /* SignUpFormModelValidatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormModelValidatorTest.swift; sourceTree = "<group>"; };
 		5275533F2B473E590005B331 /* SignUpFormModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFormModelValidator.swift; sourceTree = "<group>"; };
+		527553412B475FA40005B331 /* SignUpConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				527553182B46DDC10005B331 /* LaunchScreen.storyboard */,
 				5275531B2B46DDC10005B331 /* Info.plist */,
 				5275533F2B473E590005B331 /* SignUpFormModelValidator.swift */,
+				527553412B475FA40005B331 /* SignUpConstants.swift */,
 			);
 			path = "PhotoApp-UnitTestingDemo";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				5275530E2B46DDBE0005B331 /* AppDelegate.swift in Sources */,
 				527553402B473E590005B331 /* SignUpFormModelValidator.swift in Sources */,
 				527553102B46DDBE0005B331 /* SceneDelegate.swift in Sources */,
+				527553422B475FA40005B331 /* SignUpConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
