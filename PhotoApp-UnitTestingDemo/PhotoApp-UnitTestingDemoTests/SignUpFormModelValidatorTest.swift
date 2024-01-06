@@ -44,4 +44,27 @@ final class SignUpFormModelValidatorTest: XCTestCase {
         // Assert
         XCTAssertFalse(isFirstNameValid, "isFirstNameValid() should have return false for a first name that is longer than \(SignUpConstants.firstNameMaxLength) characters but it has return true")
     }
+    
+    // last name
+    func testSignUpFormModelValidator_withTooShortLastName_ShouldReturnFalse(){
+        // Arrange
+        
+        // Act
+        let isValidLastName = sut.isLastNameValid(lastName: "M")
+        // Assert
+        XCTAssertFalse(isValidLastName)
+    }
+    
+    func testSignUpFormModelValidator_withTooLongLastName_ShouldReturnFalse(){
+        // Arrange
+        
+        // Act
+        let isValidLastName = sut.isLastNameValid(lastName: "Mohamed Ahmed Saeed")
+        // Assert
+        XCTAssertFalse(isValidLastName)
+    }
+    
+    
+    // email
+    // password
 }
