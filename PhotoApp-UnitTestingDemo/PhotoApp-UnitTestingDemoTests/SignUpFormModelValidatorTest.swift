@@ -20,7 +20,7 @@ final class SignUpFormModelValidatorTest: XCTestCase {
         sut = nil
     }
     
-    // MARK: - FistName
+    // MARK: - FirstName
     func testSignUpFormModelValidator_withValidFirstName_ShouldReturnTrue(){
         // Arrange
 //        let sut = SignUpFormModelValidator()
@@ -46,7 +46,7 @@ final class SignUpFormModelValidatorTest: XCTestCase {
         XCTAssertFalse(isFirstNameValid, "isFirstNameValid() should have return false for a first name that is longer than \(SignUpConstants.firstNameMaxLength) characters but it has return true")
     }
     
-    // MARK: - last name
+    // MARK: - LastName
     func testSignUpFormModelValidator_withValidLastName_ShouldReturnTrue(){
         // Arrange
         // Act
@@ -74,7 +74,7 @@ final class SignUpFormModelValidatorTest: XCTestCase {
     }
     
     
-    // MARK: - email
+    // MARK: - Email
     func testSignUpFormModelValidator_withValidEmail_ShouldReturnTrue(){
         // Arrange
         
@@ -94,6 +94,31 @@ final class SignUpFormModelValidatorTest: XCTestCase {
         // Assert
         for email in validEmails {
             XCTAssertFalse(sut.isValidEmail(email), "Invalid email \(email) passed validation")
+        }
+    }
+    
+    // MARK: - Password
+    func testSignUpFormModelValidator_withValidPassword_ShouldReturnTrue(){
+        // Arrange
+        
+        // Act
+        let validPasswords = ["12345678","000111222","ahmed@@##"]
+        
+        // Assert
+        for password in validPasswords {
+            XCTAssertTrue(sut.isValidPassword(password))
+        }
+    }
+    
+    func testSignUpFormModelValidator_withInvalidPassword_ShouldReturnTrue(){
+        // Arrange
+        
+        // Act
+        let invalidPasswords = ["12","123456123456123456123","#"]
+        
+        // Assert
+        for password in invalidPasswords {
+            XCTAssertFalse(sut.isValidPassword(password))
         }
     }
 }
