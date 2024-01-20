@@ -48,7 +48,6 @@ final class SignUpFormModelValidatorTest: XCTestCase {
     
     // MARK: - LastName
     func testSignUpFormModelValidator_withValidLastName_ShouldReturnTrue(){
-        // Arrange
         // Act
         let isLastNameValid = sut.isLastNameValid("Mohamed")
         // Assert
@@ -56,8 +55,6 @@ final class SignUpFormModelValidatorTest: XCTestCase {
     }
     
     func testSignUpFormModelValidator_withTooShortLastName_ShouldReturnFalse(){
-        // Arrange
-        
         // Act
         let isValidLastName = sut.isLastNameValid("M")
         // Assert
@@ -65,8 +62,6 @@ final class SignUpFormModelValidatorTest: XCTestCase {
     }
     
     func testSignUpFormModelValidator_withTooLongLastName_ShouldReturnFalse(){
-        // Arrange
-        
         // Act
         let isValidLastName = sut.isLastNameValid("Mohamed Ahmed Saeed")
         // Assert
@@ -87,8 +82,6 @@ final class SignUpFormModelValidatorTest: XCTestCase {
     }
     
     func testSignUpFormModelValidator_withInvalidEmail_ShouldReturnFalse(){
-        // Arrange
-        
         // Act
         let validEmails = ["test@example", "ibrahim@gmail@eg", "ahmed@example.c","ahmed.com", "Muhammed@.com"]
         // Assert
@@ -99,8 +92,6 @@ final class SignUpFormModelValidatorTest: XCTestCase {
     
     // MARK: - Password
     func testSignUpFormModelValidator_withValidPassword_ShouldReturnTrue(){
-        // Arrange
-        
         // Act
         let validPasswords = ["12345678","000111222","ahmed@@##"]
         
@@ -111,8 +102,6 @@ final class SignUpFormModelValidatorTest: XCTestCase {
     }
     
     func testSignUpFormModelValidator_withInvalidPassword_ShouldReturnTrue(){
-        // Arrange
-        
         // Act
         let invalidPasswords = ["12","123456123456123456123","#"]
         
@@ -120,5 +109,13 @@ final class SignUpFormModelValidatorTest: XCTestCase {
         for password in invalidPasswords {
             XCTAssertFalse(sut.isValidPassword(password))
         }
+    }
+    
+    func testSignUpFormModelValidator_withEqualPasswords_ShouldReturnTrue(){
+        // Act
+        let doMatchPasswords = sut.doMatchPasswords(password: "12345678", repeatPassword: "12345678")
+        
+        // Assert
+        XCTAssertTrue(doMatchPasswords)
     }
 }
